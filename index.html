@@ -8,14 +8,23 @@
     </title>
     <style>
         h1{
-         font-family: sans-serif;
-         color: brown;
+            font-family: sans-serif;
+            color: brown;
+
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            background-image: url("Five_ivory_dice.jpg");
+            background-size: cover;
         }
         #dice{
-         font-size: 2em;
-         padding: 20px;
-         border: 1px solid #000;
-         margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 2em;
+            padding: 20px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
         }
     
     </style>
@@ -25,8 +34,8 @@
     <p>By Caíque Guedes and Lara</p>
     
     <div>
-        <button class="dice" href="bugalha.js">Iniciar jogo</button>
+        <button class="dice" onclick="IniciarJogo()" >Iniciar jogo</button>
     </div>
- 
+    <script src="bugalha.js"></script>
 </body>
 </html>
