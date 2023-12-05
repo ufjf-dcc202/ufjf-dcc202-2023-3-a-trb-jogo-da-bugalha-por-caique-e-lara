@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bugalia, the game
-            by Lara and Caíque
-    </title>
-    <style>
-        h1{
-            font-family: sans-serif;
-            color: brown;
+    <link rel="stylesheet" href="estilo/style.css">
 
-        }
-        body{
-            padding: 0;
-            margin: 0;
-            background-image: url("Five_ivory_dice.jpg");
-            background-size: cover;
-        }
-        #dice{
-            display: flex;
-            justify-content: center;
-            font-size: 2em;
-            padding: 20px;
-            border: 1px solid #000;
-            margin-bottom: 20px;
-        }
-    
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
+
+    <script src="main.js"></script>
+
+    <title>Jogo da Bugalha</title>
 </head>
 <body>
-    <h1>Bugalia, the game</h1>
-    <p>By Caíque Guedes and Lara</p>
-    
+    <h1>Jogo da Bugalha</h1>
     <div>
-        <button class="dice" onclick="IniciarJogo()" >Iniciar jogo</button>
+        <button onclick="IniciarJogo()"> Iniciar jogo</button>
+        <button onclick="comoJogar()"> Como jogar</button>
     </div>
-    <script src="bugalha.js"></script>
+
+    <footer>
+        <p>Por Caique Guedes e Lara</p>
+    </footer>
 </body>
 </html>
