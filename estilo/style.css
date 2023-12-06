@@ -1,3 +1,4 @@
+/*principal*/
 *{
     padding: 0;
     border: 0;
@@ -15,12 +16,26 @@ body{
 
 h1{
     font-size: 60px;
-    font-weight: 300;
     color: white;
 
 }
 
+p{
+    font-size: 25px;
+}
 
+footer{
+    padding: 0;  
+    position: fixed;
+    font-size: 20px;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-shadow: 1px 1px 0 thistle;
+}
+
+
+/*botoes*/
 button{
     display: inline-block;
     width: 150px;
@@ -35,12 +50,4 @@ button{
 
 button:hover{
     transform: scale(1.10);
-}
-
-footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-shadow: 2px 1px 0 thistle;
 }
