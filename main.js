@@ -1,11 +1,15 @@
 //Identificar elementos
 let numeroSorteado = document.querySelector('#Dado');
+let numeroSorteadoOponente = document.querySelector('#DadoOponente');
 const imgDado = document.querySelector('#imgDado');
+const imgDadoOponente = document.querySelector('#imgDadoOponente');
 const bntJogar = document.querySelector('#btnJogar');
 const sorteado = document.querySelector('#sorteado');
+const sorteadoOponente = document.querySelector('#sorteadoOponente');
 
 bntJogar.addEventListener('click', sortear);
 
+//Função do dado
 function sortear() {
     //animacao
     imgDado.classList.add('animar');
@@ -41,4 +45,38 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
 
     return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
+//Função de seleção para onde o dado vai
+function jogar(celulas){
+    if(celulas.innerHTML ==""){
+        celulas.innerHTML = numeroSorteado;
+    }
+    else{
+        dado();
+    }
+}
+
+//Função dado do oponente
+
+function dado(){
+    imgDadoOponente.classList.add('animar');
+    sorteadoOponente.classList.add('aparecer');
+
+    //executa as ações depois de determinado tempo
+    setTimeout(function animacao() {
+        //armazena numero sorteado
+        numeroSorteadoOponente = getRandomInt(1,6);
+
+        //numero sorteado aparece no console
+        console.log(numeroSorteadoOponente);
+
+        //mostra imagem com base no numero
+        imgDadoOponente.setAttribute('src', 'imagens/'+numeroSorteadoOponente+'.png');
+
+        //retira animacao
+        imgDadoOponente.classList.remove('animar');
+        imgDadoOponente.classList.remove('aparecer');
+        
+    }, 1750);
 }

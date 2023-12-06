@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/style.css">
     <link rel="stylesheet" href="estilo/dado.css">
+    <link rel="stylesheet" href="estilo/campoDeBatalha.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
@@ -19,8 +20,35 @@
                 <img src="imagens/0.png" alt="Dado" id='imgDado'> </p>
         </section>
 
+        <section class="conteudo">
+            <p id="sorteadoOponente">
+                <img src="imagens/0.png" alt="DadoOponente" id='imgDadoOponente'> </p>
+        </section>
+
         <button id="btnJogar">Jogar os dados</button>
         <button onclick="location.href='index.html'">Voltar</button>
+        
+        <div class="campo">
+            <table class="jogador"> 
+                <tr>
+                    <td class="celula" onclick="jogar(this)"></td>
+                    <td class="celula" onclick="jogar(this)"></td>
+                    <td class="celula" onclick="jogar(this)"></td>
+                </tr>
+
+                <tr>
+                    <td class="celula" onclick="jogar(this)"></td>
+                    <td class="celula" onclick="jogar(this)"></td>
+                    <td class="celula" onclick="jogar(this)"></td>
+                </tr>
+
+                <tr>
+                    <td class="celula" onclick="jogar(this)"></td>
+                    <td class="celula" onclick="jogar(this)"></td>
+                    <td class="celula" onclick="jogar(this)"></td>
+                </tr>
+            </table>
+        </div>
 
     </main>
     
