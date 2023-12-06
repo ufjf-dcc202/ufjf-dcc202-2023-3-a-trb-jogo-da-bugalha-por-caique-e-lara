@@ -1,0 +1,29 @@
+/*estiliza o dado*/
+#imgDado{
+    width: 100px;
+    position: fixed;
+    bottom: 180px;
+    left: 180px;
+    transform-origin: left bottom;
+}
+
+/*anima o dado*/
+@keyframes mover {
+    0% {
+        transform: translateY(0px); /*move y na vertical*/
+        transform: rotate(45deg); /*roda 90°*/
+        opacity: 0;
+    }
+    50% {
+        transform: scale(50%); /*diminui o tamanho*/
+    }
+    100% {
+        transform: translateY(-15px); /*move y na vertical*/
+        transform: rotate(-45deg); /*roda -90°*/
+        opacity: 1;
+    }
+}
+
+.animar {
+    animation: mover 0.5s infinite alternate;
+}
