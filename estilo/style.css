@@ -34,7 +34,6 @@ footer{
     text-shadow: 1px 1px 0 thistle;
 }
 
-
 /*botoes*/
 button{
     display: inline-block;
@@ -51,3 +50,6 @@ button{
 button:hover{
     transform: scale(1.10);
 }
+
+
+

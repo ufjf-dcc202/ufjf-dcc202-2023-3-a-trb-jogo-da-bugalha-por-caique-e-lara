@@ -3,13 +3,17 @@
     margin-left: 400px;
     margin-right: auto;
     border: 1px solid white;
-    width: 260px;
+    width: 300px;
+    height: 330px;
 }
 
-/*estiliza celula */
-.celula{
-    width: 80px;
-    height: 80px;
+/*estiliza torres */
+ol{
+    display: inline-block;
+    margin-top: 10px;
+    width: 90px;
+    height: 300px;
     border: 2px solid rgba(148, 26, 179, 0.705);
     background-color: rgba(240, 248, 255, 0.247);
+    
 }
