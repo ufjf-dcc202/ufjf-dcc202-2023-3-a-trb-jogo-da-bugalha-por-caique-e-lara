@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="estilo/dado.css">
     <link rel="stylesheet" href="estilo/campoDeBatalha.css">
 
+    <script src="campo.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
 
@@ -15,14 +17,18 @@
 <body>
     <main>
         <h1>Jogo da Bugalha</h1>
-        <section class="conteudo">
+       <section class="conteudo">
             <p id="sorteado">
-                <img src="imagens/0.png" alt="Dado" id='imgDado'> </p>
+                <label for="imgDado">Eu</label>
+                <img src="imagens/0.png" alt="Dado" id='imgDado'> 
+            </p>
         </section>
 
         <section class="conteudo">
+            <label id for="imgDadoOponente">Computador</label>
             <p id="sorteadoOponente">
-                <img src="imagens/0.png" alt="DadoOponente" id='imgDadoOponente'> </p>
+                <img src="imagens/0.png" alt="DadoOponente" id='imgDadoOponente'> 
+            </p>
         </section>
 
         <button id="btnJogar">Jogar os dados</button>
@@ -30,26 +36,20 @@
         
         <div class="campo">
             <table class="jogador"> 
-                <tr>
-                    <td class="celula" onclick="jogar(this)"></td>
-                    <td class="celula" onclick="jogar(this)"></td>
-                    <td class="celula" onclick="jogar(this)"></td>
+                <tr class="torre">
+                    <ol id="torreLista" onclick="posicao(this)"></ol>
                 </tr>
 
-                <tr>
-                    <td class="celula" onclick="jogar(this)"></td>
-                    <td class="celula" onclick="jogar(this)"></td>
-                    <td class="celula" onclick="jogar(this)"></td>
+                <tr class="torre">
+                    <ol id="torreLista" onclick="posicao(this)"></ol>
                 </tr>
-
-                <tr>
-                    <td class="celula" onclick="jogar(this)"></td>
-                    <td class="celula" onclick="jogar(this)"></td>
-                    <td class="celula" onclick="jogar(this)"></td>
+                
+                <tr class="torre">
+                    <ol id="torreLista" onclick="posicao(this)"></ol>
                 </tr>
             </table>
         </div>
-
+         
     </main>
     
     <script src="main.js"></script>

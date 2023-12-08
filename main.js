@@ -35,7 +35,7 @@ function sortear() {
         imgDado.classList.remove('aparecer');
         
     }, 1750);
-
+    
 }
 
 function getRandomInt(min, max) {
@@ -47,19 +47,32 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random()*(max - min + 1)) + min;
 }
 
-//Função de seleção para onde o dado vai
-function jogar(celulas){
-    if(celulas.innerHTML ==""){
-        celulas.innerHTML = numeroSorteado;
+
+    // Variável de controle para garantir que a rolagem ocorra apenas uma vez
+    let primeiraRolagem = true;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('btnJogar').addEventListener('click', function () {
+            // Verifica se é a primeira rolagem
+            if (primeiraRolagem) {
+                // Chama a função sortearOponente
+                sortearOponente();
+
+                // Define a variável de controle como false para evitar rolagens adicionais
+                primeiraRolagem = false;
+            }
+        });
+    });
+
+    function getRandomInt(min, max) {
+        //da esquerda para a direita, significando cada elemento: Math.floor -> arredonda numero, Math.random -> gera numero entre 0 e 1.
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    else{
-        dado();
-    }
-}
+
+
 
 //Função dado do oponente
-
-function dado(){
+function sortearOponente(){
     imgDadoOponente.classList.add('animar');
     sorteadoOponente.classList.add('aparecer');
 
