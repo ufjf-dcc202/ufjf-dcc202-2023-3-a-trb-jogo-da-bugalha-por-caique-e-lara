@@ -7,7 +7,7 @@
     height: 330px;
 }
 /*estiliza torre inimiga*/
-.jogadorOponente{
+.campoOponente{
 
     display: inline-block;
     align-items: flex-end;
