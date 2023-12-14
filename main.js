@@ -58,11 +58,10 @@ function getRandomInt(min, max) {
                 // Chama a função sortearOponente
                 sortearOponente();
 
-                // Define a variável de controle como false para evitar rolagens adicionais
-                primeiraRolagem = false;
             }
         });
     });
+
 
     function getRandomInt(min, max) {
         //da esquerda para a direita, significando cada elemento: Math.floor -> arredonda numero, Math.random -> gera numero entre 0 e 1.
