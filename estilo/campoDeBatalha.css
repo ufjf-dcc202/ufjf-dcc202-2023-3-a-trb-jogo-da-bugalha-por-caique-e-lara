@@ -7,7 +7,11 @@
     height: 330px;
 }
 /*estiliza torre inimiga*/
+.jogadorOponente{
 
+    display: inline-block;
+    align-items: flex-end;
+}
 
 /*estiliza torres */
 ol{
