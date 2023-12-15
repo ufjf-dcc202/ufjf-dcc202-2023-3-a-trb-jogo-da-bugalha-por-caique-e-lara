@@ -7,67 +7,42 @@
     <link rel="stylesheet" href="estilo/dado.css">
     <link rel="stylesheet" href="estilo/campoDeBatalha.css">
 
-    <script src="campo.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
-    <style></style>
+
     <title>Jogo da Bugalha</title>
 </head>
 <body>
     <main>
         <h1>Jogo da Bugalha</h1>
-       <section class="conteudo">
             <p id="sorteado">
-                <label for="imgDado">Eu</label>
                 <img src="imagens/0.png" alt="Dado" id='imgDado'> 
             </p>
-        </section>
 
-        <section class="conteudo">
-            <label id for="imgDadoOponente">Computador</label>
             <p id="sorteadoOponente">
                 <img src="imagens/0.png" alt="DadoOponente" id='imgDadoOponente'> 
             </p>
-        </section>
 
         <button id="btnJogar">Jogar os dados</button>
         <button onclick="location.href='index.html'">Voltar</button>
         
-        <div class="campo">
-            <table class="jogador"> 
-                <tr class="torre">
-                    <ol id="torreLista" onclick="posicao(this)"></ol>
-                </tr>
-
-                <tr class="torre">
-                    <ol id="torreLista" onclick="posicao(this)"></ol>
-                </tr>
-                
-                <tr class="torre">
-                    <ol id="torreLista" onclick="posicao(this)"></ol>
-                </tr>
-            </table>
+        <div class="campo" id="cOponente">
+        <section id="jogador">
+                <ol id="listaTorre1"></ol>
+                <ol id="listaTorre2"></ol> 
+                <ol id="listaTorre3"></ol> 
+        </section>
             
-        
-           
+        <section id="oponente">
+            <ol id="listaTorreOponente1"></ol>
+            <ol id="listaTorreOponente2"></ol> 
+            <ol id="listaTorreOponente3"></ol> 
+        </section>
         </div>
-        <div class="campoOponente">
-            <table class="jogadorOponente"> 
-                <tr class="torre">
-                    <ol id="torreLista1" onclick="posicao(this)"></ol>
-                </tr>
-        
-                <tr class="torre">
-                    <ol id="torreLista2" onclick="posicao(this)"></ol>
-                </tr>
-                
-                <tr class="torre">
-                    <ol id="torreLista3" onclick="posicao(this)"></ol>
-                </tr>
+
             </table>
-        </div>
-        <div class="campoOponente">
+        <div>
             <table id="tabelaResultados">
                 <tbody>
         
@@ -77,6 +52,7 @@
          
     </main>
     
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="jogo.js" type="module"></script>
 </body>
 </html>

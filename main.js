@@ -1,13 +1,23 @@
 //Identificar elementos
-let numeroSorteado = document.querySelector('#Dado');
-let numeroSorteadoOponente = document.querySelector('#DadoOponente');
+export let numeroSorteado = document.querySelector('#Dado');
+export let numeroSorteadoOponente = document.querySelector('#DadoOponente');
 const imgDado = document.querySelector('#imgDado');
 const imgDadoOponente = document.querySelector('#imgDadoOponente');
 const bntJogar = document.querySelector('#btnJogar');
+const JogarOponente = document.querySelector('#cOponente');
 const sorteado = document.querySelector('#sorteado');
 const sorteadoOponente = document.querySelector('#sorteadoOponente');
 
 bntJogar.addEventListener('click', sortear);
+JogarOponente.addEventListener('click', sortearOponente);
+
+//importa função jogo.js
+import { jogadaOponente } from "./jogo.js";
+
+//gera número aleatório
+export function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 //Função do dado
 function sortear() {
@@ -33,29 +43,10 @@ function sortear() {
         //retira animacao
         imgDado.classList.remove('animar');
         imgDado.classList.remove('aparecer');
-        sortearOponente()
+       
     }, 1750);
     
 }
-
-function getRandomInt(min, max) {
-    //arredonda para cima 
-    min = Math.ceil(min);
-    //arredonda para baixo
-    max = Math.floor(max);
-
-    return Math.floor(Math.random()*(max - min + 1)) + min;
-}
-
-
-   
-
-
-    function getRandomInt(min, max) {
-        //da esquerda para a direita, significando cada elemento: Math.floor -> arredonda numero, Math.random -> gera numero entre 0 e 1.
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
 
 
 //Função dado do oponente
@@ -64,7 +55,7 @@ function sortearOponente(){
     sorteadoOponente.classList.add('aparecer');
 
     //executa as ações depois de determinado tempo
-    setTimeout(function animacao() {
+    setTimeout(function animacaoOponente() {
         //armazena numero sorteado
         numeroSorteadoOponente = getRandomInt(1,6);
 
@@ -78,8 +69,13 @@ function sortearOponente(){
         imgDadoOponente.classList.remove('animar');
         imgDadoOponente.classList.remove('aparecer');
         
+        //seleciona uma coluna aleatória e adiciona o número
+        jogadaOponente();
     }, 1750);
+
 }
+
+/*
     // Variáveis para contar o número de jogadas
     let contadorJogador = 1;
     let contadorOponente = 1;
@@ -127,4 +123,4 @@ function sortearOponente(){
         celulaContador.innerHTML = contador;
     }
 
-
+*/
