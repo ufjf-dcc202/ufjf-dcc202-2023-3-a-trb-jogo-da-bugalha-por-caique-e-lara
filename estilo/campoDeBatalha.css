@@ -1,25 +1,35 @@
 /*estiliza campo*/
-.campo{
-    margin-left: 400px;
-    margin-right: auto;
+.campo {
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+#jogador{
+    display: inline-block;
     border: 1px solid white;
     width: 300px;
-    height: 330px;
+    height: 210px;
+    cursor: pointer;
 }
-/*estiliza torre inimiga*/
-.campoOponente{
-
+/*estiliza campo oponente*/
+#oponente{
     display: inline-block;
-    align-items: flex-end;
+    margin-left: 100px;
+    border: 1px solid white;
+    width: 300px;
+    height: 210px;
+    cursor: pointer;
 }
 
 /*estiliza torres */
+
 ol{
+    margin-top: 15px;
+    list-style-type: none;
     display: inline-block;
-    margin-top: 10px;
     width: 90px;
-    height: 300px;
+    height: 180px;
     border: 2px solid rgba(148, 26, 179, 0.705);
     background-color: rgba(240, 248, 255, 0.247);
-    
 }

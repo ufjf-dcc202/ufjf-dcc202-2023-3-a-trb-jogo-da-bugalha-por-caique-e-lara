@@ -15,13 +15,6 @@
     transform-origin: left bottom;
 }
 
-label{
-    width: 100px;
-    position: fixed;
-    bottom: 180px;
-    right: 180px;
-    transform-origin: left bottom; 
-}
 
 /*anima o dado*/
 @keyframes mover {
