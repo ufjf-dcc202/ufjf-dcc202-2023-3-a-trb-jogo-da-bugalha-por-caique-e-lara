@@ -22,14 +22,13 @@ export function getLista(id) {
         case 3:
             return listaTorre3Oponente;
         default:
-            console.error('ID torre inválido');
+            //console.error('ID torre inválido');
     }
 }
 
 //adiciona número na lista de acordo com id
 export function adicionaNaLista(id, numero){
     const lista = getLista(id);
-
     if (lista){
        lista.push(numero);
     }

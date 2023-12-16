@@ -26,11 +26,10 @@ export function criaElementoNaLista(event) {
 
     //verifica se o clique foi apenas na torre do jogador
     if(torreClick === torre1 || torreClick === torre2 || torreClick=== torre3){
-    let torre = event.target.id;
-    console.log(torre);
-    adicionaNaLista(torre, numeroSorteado);
-    atualizarItensDeLista(torre);
-        
+        let torre = event.target.id;
+        console.log(torre);
+        adicionaNaLista(torre, numeroSorteado);
+        atualizarItensDeLista(torre);
     }
 }
 
@@ -49,8 +48,8 @@ function atualizarItensDeLista(torre) {
             olElement.appendChild(li);
         }
     }
+
     calcularPontuacao();
-    console.log(calcularPontuacao);
     verificarFimJogo();
 }
 
@@ -58,7 +57,7 @@ function atualizarItensDeLista(torre) {
 
 function calcularPontuacao(torre) {
     const lista = getLista(torre);
-    const valorDado = numeroSorteado;
+    //const valorDado = numeroSorteado;
     let pontuacao = 0;
 
     for (let i = 1; i <= 6; i++) {
@@ -72,21 +71,10 @@ function calcularPontuacao(torre) {
 
 export function jogadaOponente(){
     let torreOponente = getRandomInt(1,3);
-
-    //verifica se a coluna já foi seelcionada 3 vezes
-    do {
+    //verifica se a coluna já foi selecionada 3 vezes
+    for(let i=0; i<3; i++){
         torreOponente = getRandomInt(1,3);
-        if (torreOponente==1 && cont1 < 3) {
-            cont1++;
-        }
-        else if (torreOponente==2 && cont2 < 3) {
-            cont2++;
-        }
-        else if (torreOponente==3 && cont3 < 3) {
-            cont3++;
-        }
-        
-    } while (cont1>=3 || cont2 >=3 || cont3 >=3);
+    }
 
     console.log(torreOponente);
 
@@ -107,7 +95,7 @@ export function jogadaOponente(){
             olElement.appendChild(li);
         }
     }
+
     calcularPontuacao();
-    console.log(calcularPontuacao);
     verificarFimJogo();
 }

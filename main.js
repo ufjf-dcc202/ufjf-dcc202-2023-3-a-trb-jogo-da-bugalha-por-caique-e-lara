@@ -11,7 +11,7 @@ const sorteadoOponente = document.querySelector('#sorteadoOponente');
 bntJogar.addEventListener('click', sortear);
 JogarOponente.addEventListener('click', sortearOponente);
 
-//importa função jogo.js
+//importa função de jogo.js
 import { jogadaOponente } from "./jogo.js";
 
 //gera número aleatório
@@ -79,8 +79,8 @@ function sortearOponente(){
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
     }, 1750);
-   
 }
+
 function OcorreCliqueTorre(event){
 
     torre1.removeEventListener('click', OcorreCliqueTorre);
