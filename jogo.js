@@ -16,11 +16,24 @@ torre3.addEventListener('click', criaElementoNaLista);
 
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
+    let torreClick = event.currentTarget;
+
+    //verifica se o clique foi apenas na torre do jogador
+    if(torreClick === torre1 || torreClick === torre2 || torreClick=== torre3 ){
     let torre = event.target.id;
     console.log(torre);
     adicionaNaLista(torre, numeroSorteado);
     atualizarItensDeLista(torre);
- }
+        // confere se o jogo deve ser encerrado
+        if (verificarFimJogo()) {
+            console.log('Jogo encerrado.');
+            
+        } else {
+            jogadaOponente();
+    }
+    }
+}
+
 
 //atualiza os numeros da lista correspondente
 function atualizarItensDeLista(torre) {
@@ -38,6 +51,10 @@ function atualizarItensDeLista(torre) {
     }
 }
 
+function verificarFimJogo() {
+    return cont1 >= 3 || cont2 >= 3 || cont3 >= 3;
+}
+
 export function jogadaOponente(){
     let torreOponente = getRandomInt(1,3);
 
@@ -47,7 +64,7 @@ export function jogadaOponente(){
     else if (torreOponente==2) {
         cont2++;
     }
-    else if (torreOponente==2) {
+    else if (torreOponente==3) {
         cont3++;
     }
 

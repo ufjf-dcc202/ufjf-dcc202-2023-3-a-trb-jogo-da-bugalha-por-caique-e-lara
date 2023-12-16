@@ -43,7 +43,12 @@ function sortear() {
         //retira animacao
         imgDado.classList.remove('animar');
         imgDado.classList.remove('aparecer');
-       
+        
+        //Adiciona ouvinte apenas depois de rola o dado
+        torre1.addEventListener('click', OcorreCliqueTorre);
+        torre2.addEventListener('click', OcorreCliqueTorre);
+        torre3.addEventListener('click', OcorreCliqueTorre);
+        OcorreCliqueTorre();
     }, 1750);
     
 }
@@ -72,55 +77,12 @@ function sortearOponente(){
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
     }, 1750);
+    function OcorreCliqueTorre(event){
 
+        torre1.removeEventListener('click', OcorreCliqueTorre);
+        torre2.removeEventListener('click', OcorreCliqueTorre);
+        torre3.removeEventListener('click', OcorreCliqueTorre);
+    }
 }
 
-/*
-    // Variáveis para contar o número de jogadas
-    let contadorJogador = 1;
-    let contadorOponente = 1;
 
-    // Adiciona um ouvinte de evento ao botão de jogar
-    bntJogar.addEventListener('click', function () {
-        // Sorteia o número para o jogador
-        const numeroSorteadoJogador = sortear();
-        
-        // Adiciona o número à tabela para o jogador
-        adicionarNaTabela('Jogador', numeroSorteadoJogador, contadorJogador);
-
-        // Incrementa o contador para o próximo jogador
-        contadorJogador++;
-
-        // Sorteia o número para o oponente
-        const numeroSorteadoOponente = sortearOponente();
-
-        // Adiciona o número à tabela para o oponente
-        adicionarNaTabela('Oponente', numeroSorteadoOponente, contadorOponente);
-
-        // Incrementa o contador para o próximo oponente
-        contadorOponente++;
-    });
-
-    // Função para adicionar uma linha à tabela
-    function adicionarNaTabela(jogador, numeroSorteado, contador) {
-        // Obtém a referência da tabela
-        const tabela = document.getElementById('tabelaResultados');
-
-        // Obtém a referência do corpo da tabela
-        const tbody = tabela.getElementsByTagName('tbody')[0];
-
-        // Cria uma nova linha
-        const novaLinha = tbody.insertRow();
-
-        // Cria células para a linha
-        const celulaJogador = novaLinha.insertCell(0);
-        const celulaNumeroSorteado = novaLinha.insertCell(1);
-        const celulaContador = novaLinha.insertCell(2);
-
-        // Adiciona os valores às células
-        celulaJogador.innerHTML = jogador;
-        celulaNumeroSorteado.innerHTML = numeroSorteado;
-        celulaContador.innerHTML = contador;
-    }
-
-*/
