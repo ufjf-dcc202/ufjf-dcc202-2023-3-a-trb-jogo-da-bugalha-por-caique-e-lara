@@ -4,7 +4,7 @@ export let numeroSorteadoOponente = document.querySelector('#DadoOponente');
 const imgDado = document.querySelector('#imgDado');
 const imgDadoOponente = document.querySelector('#imgDadoOponente');
 const bntJogar = document.querySelector('#btnJogar');
-const JogarOponente = document.querySelector('#cOponente');
+const JogarOponente = document.querySelector('.cOponente');
 const sorteado = document.querySelector('#sorteado');
 const sorteadoOponente = document.querySelector('#sorteadoOponente');
 
@@ -44,17 +44,17 @@ function sortear() {
         imgDado.classList.remove('animar');
         imgDado.classList.remove('aparecer');
         
-        //Adiciona ouvinte apenas depois de rola o dado
+        /*Adiciona ouvinte apenas depois de rola o dado
         torre1.addEventListener('click', OcorreCliqueTorre);
         torre2.addEventListener('click', OcorreCliqueTorre);
         torre3.addEventListener('click', OcorreCliqueTorre);
         OcorreCliqueTorre();
+        */
         
     }, 1750);
     
     
 }
-
 
 //Função dado do oponente
 function sortearOponente(){
@@ -78,6 +78,7 @@ function sortearOponente(){
         
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
+        
     }, 1750);
 }
 

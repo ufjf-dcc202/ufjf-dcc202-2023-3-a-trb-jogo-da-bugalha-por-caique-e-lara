@@ -21,8 +21,6 @@ export function getLista(id) {
             return listaTorre2Oponente;
         case 3:
             return listaTorre3Oponente;
-        default:
-            //console.error('ID torre inválido');
     }
 }
 
