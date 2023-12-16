@@ -14,23 +14,23 @@ torre1.addEventListener('click', criaElementoNaLista);
 torre2.addEventListener('click', criaElementoNaLista);
 torre3.addEventListener('click', criaElementoNaLista);
 
+function verificarFimJogo(){
+    if(cont1 === 3 && cont2 === 3 && cont3 === 3){
+            return cont1 >= 3 && cont2 >= 3 && cont3 >= 3;
+        
+    }
+}
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
     let torreClick = event.currentTarget;
 
     //verifica se o clique foi apenas na torre do jogador
-    if(torreClick === torre1 || torreClick === torre2 || torreClick=== torre3 ){
+    if(torreClick === torre1 || torreClick === torre2 || torreClick=== torre3){
     let torre = event.target.id;
     console.log(torre);
     adicionaNaLista(torre, numeroSorteado);
     atualizarItensDeLista(torre);
-        // confere se o jogo deve ser encerrado
-        if (verificarFimJogo()) {
-            console.log('Jogo encerrado.');
-            
-        } else {
-            jogadaOponente();
-    }
+        
     }
 }
 
@@ -50,11 +50,11 @@ function atualizarItensDeLista(torre) {
         }
     }
     calcularPontuacao();
+    console.log(calcularPontuacao);
+    verificarFimJogo();
 }
 
-function verificarFimJogo() {
-    return cont1 >= 3 || cont2 >= 3 || cont3 >= 3;
-}
+
 
 function calcularPontuacao(torre) {
     const lista = getLista(torre);
@@ -72,8 +72,6 @@ function calcularPontuacao(torre) {
 
 export function jogadaOponente(){
     let torreOponente = getRandomInt(1,3);
-
-    
 
     //verifica se a coluna já foi seelcionada 3 vezes
     do {
@@ -110,4 +108,6 @@ export function jogadaOponente(){
         }
     }
     calcularPontuacao();
+    console.log(calcularPontuacao);
+    verificarFimJogo();
 }
