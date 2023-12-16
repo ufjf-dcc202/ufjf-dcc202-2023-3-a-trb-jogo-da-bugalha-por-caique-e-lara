@@ -49,7 +49,9 @@ function sortear() {
         torre2.addEventListener('click', OcorreCliqueTorre);
         torre3.addEventListener('click', OcorreCliqueTorre);
         OcorreCliqueTorre();
+        
     }, 1750);
+    
     
 }
 
@@ -77,12 +79,13 @@ function sortearOponente(){
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
     }, 1750);
-    function OcorreCliqueTorre(event){
+   
+}
+function OcorreCliqueTorre(event){
 
-        torre1.removeEventListener('click', OcorreCliqueTorre);
-        torre2.removeEventListener('click', OcorreCliqueTorre);
-        torre3.removeEventListener('click', OcorreCliqueTorre);
-    }
+    torre1.removeEventListener('click', OcorreCliqueTorre);
+    torre2.removeEventListener('click', OcorreCliqueTorre);
+    torre3.removeEventListener('click', OcorreCliqueTorre);
 }
 
 

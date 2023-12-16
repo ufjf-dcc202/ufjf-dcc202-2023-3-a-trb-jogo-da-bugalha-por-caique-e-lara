@@ -73,23 +73,27 @@ function calcularPontuacao(torre) {
 export function jogadaOponente(){
     let torreOponente = getRandomInt(1,3);
 
-    if (torreOponente==1) {
-        cont1++;
-    }
-    else if (torreOponente==2) {
-        cont2++;
-    }
-    else if (torreOponente==3) {
-        cont3++;
-    }
+    
 
     //verifica se a coluna já foi seelcionada 3 vezes
     do {
         torreOponente = getRandomInt(1,3);
+        if (torreOponente==1 && cont1 < 3) {
+            cont1++;
+        }
+        else if (torreOponente==2 && cont2 < 3) {
+            cont2++;
+        }
+        else if (torreOponente==3 && cont3 < 3) {
+            cont3++;
+        }
+        
     } while (cont1>=3 || cont2 >=3 || cont3 >=3);
 
     console.log(torreOponente);
+
     const listaOponente = getLista(torreOponente);
+
     if (listaOponente){
         listaOponente.push(numeroSorteadoOponente);
     }
