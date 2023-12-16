@@ -55,6 +55,20 @@ function verificarFimJogo() {
     return cont1 >= 3 || cont2 >= 3 || cont3 >= 3;
 }
 
+function calcularPontuacao(torre) {
+    const lista = getLista(torre);
+    const valorDado = numeroSorteado;
+    let pontuacao = 0;
+
+    for (let i = 1; i <= 6; i++) {
+        const quantidade = lista.filter(item => item === i).length;
+        pontuacao += i * quantidade;
+    }
+    const elementoPontuacaoJogador = document.getElementById('pontuacaoJogador');
+    elementoPontuacaoJogador.textContent = pontuacao;
+
+}
+
 export function jogadaOponente(){
     let torreOponente = getRandomInt(1,3);
 
