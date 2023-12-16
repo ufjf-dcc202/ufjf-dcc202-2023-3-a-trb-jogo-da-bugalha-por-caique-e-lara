@@ -49,6 +49,7 @@ function atualizarItensDeLista(torre) {
             olElement.appendChild(li);
         }
     }
+    calcularPontuacao();
 }
 
 function verificarFimJogo() {
@@ -104,4 +105,5 @@ export function jogadaOponente(){
             olElement.appendChild(li);
         }
     }
+    calcularPontuacao();
 }
