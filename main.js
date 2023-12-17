@@ -14,7 +14,8 @@ bntJogar.addEventListener('click', sortear);
 JogarOponente.addEventListener('click', sortearOponente);
 
 //importa função de jogo.js
-import { jogadaOponente } from "./jogo.js";
+import { jogadaOponente} from "./jogo.js";
+import { getLista } from "./lista.js";
 
 //gera número aleatório
 export function getRandomInt(min, max) {
@@ -59,7 +60,7 @@ function sortear() {
 }
 
 //Função dado do oponente
-function sortearOponente(){
+export function sortearOponente(){
     imgDadoOponente.classList.add('animar');
     sorteadoOponente.classList.add('aparecer');
 
@@ -81,16 +82,9 @@ function sortearOponente(){
         
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
-
     }, 1750);
 
 }
 
-function OcorreCliqueTorre(event){
-
-    torre1.removeEventListener('click', OcorreCliqueTorre);
-    torre2.removeEventListener('click', OcorreCliqueTorre);
-    torre3.removeEventListener('click', OcorreCliqueTorre);
-}
 
 
