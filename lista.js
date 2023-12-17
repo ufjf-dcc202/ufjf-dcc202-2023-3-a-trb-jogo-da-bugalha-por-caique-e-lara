@@ -1,10 +1,15 @@
-//definir elementos importantes
-let listaTorre1 = [];
-let listaTorre2 = [];
-let listaTorre3 = [];
-let listaTorreOponente1 = [];
-let listaTorreOponente2 = [];
-let listaTorreOponente3 = [];
+//define elementos
+export let listaTorre1 = [];
+export let listaTorre2 = [];
+export let listaTorre3 = [];
+export let listaTorreOponente1 = [];
+export let listaTorreOponente2 = [];
+export let listaTorreOponente3 = [];
+
+//importa função
+import { calcularPontuacao, verificarFimJogo } from "./pontos.js";
+
+
 
 //retorna lista de acordo com id
 export function getLista(id) {
@@ -25,7 +30,7 @@ export function getLista(id) {
 }
 
 //retorna a lista a ser verificada tendo como parâmetro a lista recebida
-function getListaVerificar(id) {
+export function getListaVerificar(id) {
     switch (id){
         case 'listaTorre1':
             return listaTorreOponente1;
@@ -60,15 +65,14 @@ function getTorre(lista) {
     }
 }
 
-
-
 //adiciona número na lista de acordo com id
 export function adicionaNaLista(id, numero){
     const lista = getLista(id);
     if (lista && lista.length<3){
        lista.push(numero);
     }
-    verificaIgualdade(id, numero);
+    verificarIgualdade(id, numero);
+    atualizarItensDeLista(getListaVerificar(lista));
 }
 
  //atualiza os numeros da lista correspondente
@@ -91,7 +95,7 @@ export function adicionaNaLista(id, numero){
 }
 
 //funcao para verificacao de tabelas
-export function verificaIgualdade(torre, numero) {
+export function verificarIgualdade(torre, numero) {
 
     const lista = getLista(torre);
     const listaVerificar = getListaVerificar(torre);
@@ -106,6 +110,12 @@ export function verificaIgualdade(torre, numero) {
             }
         }
     }
+    atualizarItensDeLista(lista);
     atualizarItensDeLista(getTorre(lista));
+    calcularPontuacao(torre);
+    calcularPontuacao(getTorre(lista));
+
     console.log("Após da remoção:",listaVerificar);
+
+    verificarFimJogo();
 }
