@@ -1,11 +1,11 @@
-//Identificar elementos
+//Identifica e define elementos
 let dadoSorteado = document.querySelector('#Dado');
 export let numeroSorteado=0;
 let dadoSorteadoOponente = document.querySelector('#DadoOponente');
 export let numeroSorteadoOponente=0;
 const imgDado = document.querySelector('#imgDado');
 const imgDadoOponente = document.querySelector('#imgDadoOponente');
-const bntJogar = document.querySelector('#btnJogar');
+export const bntJogar = document.querySelector('#btnJogar');
 const JogarOponente = document.querySelector('.cOponente');
 const sorteado = document.querySelector('#sorteado');
 const sorteadoOponente = document.querySelector('#sorteadoOponente');
