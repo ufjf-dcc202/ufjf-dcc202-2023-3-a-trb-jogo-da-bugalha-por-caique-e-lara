@@ -25,7 +25,7 @@ export function getLista(id) {
 }
 
 //retorna a lista a ser verificada tendo como parâmetro a lista recebida
-export function getListaVerificar(id) {
+function getListaVerificar(id) {
     switch (id){
         case 'listaTorre1':
             return listaTorreOponente1;
@@ -42,6 +42,24 @@ export function getListaVerificar(id) {
     }
 }
 
+//retornar torre de acordo com a lista
+function getTorre(lista) {
+    switch (lista){
+        case listaTorre1:
+            return 'listaTorreOponente1';
+        case listaTorre2:
+           return 'listaTorreOponente2';
+        case listaTorre3:
+            return 'listaTorreOponente3';
+        case listaTorreOponente1:
+            return 'listaTorre1';
+        case listaTorreOponente2:
+            return 'listaTorre2';
+        case listaTorreOponente3:
+            return 'listaTorre3';
+    }
+}
+
 
 
 //adiciona número na lista de acordo com id
@@ -51,7 +69,6 @@ export function adicionaNaLista(id, numero){
        lista.push(numero);
     }
     verificaIgualdade(id, numero);
-    atualizarItensDeLista(getListaVerificar(lista));
 }
 
  //atualiza os numeros da lista correspondente
@@ -73,21 +90,22 @@ export function adicionaNaLista(id, numero){
     }
 }
 
-
+//funcao para verificacao de tabelas
 export function verificaIgualdade(torre, numero) {
 
     const lista = getLista(torre);
     const listaVerificar = getListaVerificar(torre);
     console.log("Antes da remoção:",listaVerificar);
 
-    // verifica se ambas as listas existem
+    // verifica se as listas são diferentes
    if (lista != listaVerificar) {
-        // percorre listas e remove núm igual
+        // percorre listas e remove num igual
         for (let i = listaVerificar.length-1; i>=0; i--) {
-            if (lista[i] === numero || listaVerificar[i] === numero) {
+            if (listaVerificar[i] === numero) {
                 listaVerificar.splice(i,1);
             }
         }
     }
+    atualizarItensDeLista(getTorre(lista));
     console.log("Após da remoção:",listaVerificar);
 }

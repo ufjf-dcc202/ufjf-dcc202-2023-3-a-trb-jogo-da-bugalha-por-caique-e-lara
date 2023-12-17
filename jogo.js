@@ -1,6 +1,6 @@
 //lista.js
 
-import {adicionaNaLista, atualizarItensDeLista, getLista, getListaVerificar, verificaIgualdade} from "./lista.js";
+import {adicionaNaLista, atualizarItensDeLista, getLista, verificaIgualdade} from "./lista.js";
 import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
 
 //definir elementos importantes
@@ -30,6 +30,7 @@ export function criaElementoNaLista(event) {
         console.log(torre);
         adicionaNaLista(torre, numeroSorteado);
         atualizarItensDeLista(torre);
+        //calcularPontuacao(torre);
     }
 }
 
@@ -61,20 +62,28 @@ export function jogadaOponente(){
     }
     
     verificaIgualdade(torreOponente, numeroSorteadoOponente);
-    atualizarItensDeLista(getListaVerificar(listaOponente));
 }
 
-
+/*
 function calcularPontuacao(torre) {
     const lista = getLista(torre);
-    //const valorDado = numeroSorteado;
+    const quantidade={};
+    let num = lista;
     let pontuacao = 0;
 
-    for (let i = 1; i <= 6; i++) {
-        const quantidade = lista.filter(item => item === i).length;
-        pontuacao += i * quantidade;
+    //verifica qtd vezes q o número aparece
+    for (let i = 0; i< lista.length; i++) {
+       quantidade[num] = (quantidade[num] || 0)+1;
+    }
+
+    //calcula pontos de acordo com o qtd vezes q o num aparece
+    for (let i = 0; i < lista.length; i++) {
+        pontuacao += num * quantidade[num];
     }
     const elementoPontuacaoJogador = document.getElementById('pontuacaoJogador');
     elementoPontuacaoJogador.textContent = pontuacao;
-    return elementoPontuacaoJogador.textContent;
+
+    return pontuacao;
 }
+
+*/
