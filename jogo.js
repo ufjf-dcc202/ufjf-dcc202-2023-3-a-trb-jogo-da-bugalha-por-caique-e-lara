@@ -1,6 +1,6 @@
 //lista.js
 import {adicionaNaLista, getLista} from "./lista.js";
-import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
+import { getRandomInt, numeroSorteado, numeroSorteadoOponente} from "./main.js";
 
 //definir elementos importantes
 const torre1 = document.querySelector('#listaTorre1');
@@ -10,15 +10,16 @@ let cont1=0;
 let cont2=0;
 let cont3=0;
 
-torre1.addEventListener('click', criaElementoNaLista);
+torre1.addEventListener('clicks', criaElementoNaLista);
 torre2.addEventListener('click', criaElementoNaLista);
 torre3.addEventListener('click', criaElementoNaLista);
 
-function verificarFimJogo(){
+ function verificarFimJogo(){
     if(cont1 === 3 && cont2 === 3 && cont3 === 3){
             return cont1 >= 3 && cont2 >= 3 && cont3 >= 3;
-        
+
     }
+   
 }
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
@@ -66,7 +67,7 @@ function calcularPontuacao(torre) {
     }
     const elementoPontuacaoJogador = document.getElementById('pontuacaoJogador');
     elementoPontuacaoJogador.textContent = pontuacao;
-
+    return elementoPontuacaoJogador.textContent;
 }
 
 export function jogadaOponente(){
