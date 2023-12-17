@@ -22,8 +22,7 @@
     cursor: pointer;
 }
 
-/*estiliza torres */
-
+/*torres-colunas */
 ol{
     margin-top: 15px;
     list-style-type: none;
@@ -32,4 +31,21 @@ ol{
     height: 180px;
     border: 2px solid rgba(148, 26, 179, 0.705);
     background-color: rgba(240, 248, 255, 0.247);
+}
+
+/*pontuação de cada coluna*/
+
+/*mensagem final*/
+.final {
+    width: 500px;
+    height: 100px;
+    background-color: #692c7aa0; /* Cor de fundo verde, ajuste conforme necessário */
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    line-height: 100px; /* Centraliza verticalmente o texto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
