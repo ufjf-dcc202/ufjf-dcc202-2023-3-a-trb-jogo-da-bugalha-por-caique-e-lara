@@ -1,14 +1,11 @@
 //lista.js
-import {adicionaNaLista, getLista} from "./lista.js";
+import {adicionaNaLista, atualizarItensDeLista, getLista, verificaIgualdade} from "./lista.js";
 import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
 
 //definir elementos importantes
 const torre1 = document.querySelector('#listaTorre1');
 const torre2 = document.querySelector('#listaTorre2');
 const torre3 = document.querySelector('#listaTorre3');
-let cont1=0;
-let cont2=0;
-let cont3=0;
 
 torre1.addEventListener('click', criaElementoNaLista);
 torre2.addEventListener('click', criaElementoNaLista);
@@ -26,31 +23,12 @@ export function criaElementoNaLista(event) {
         adicionaNaLista(torre, numeroSorteado);
         atualizarItensDeLista(torre);
     }
-}
-
-
-//atualiza os numeros da lista correspondente
-function atualizarItensDeLista(torre) {
-    const olElement = document.querySelector('#'+torre); // Referenciar o elemento <ol> pelo ID
-    olElement.innerHTML = ""; // Limpar o conteúdo interno do elemento <ol>
-    const lista = getLista(torre);
-
-    if (lista && lista.length > 0) {
-        for(let i=0; i<3;i++){
-            const item = lista[i];
-            const li = document.createElement('li');
-            li.textContent = item;
-            olElement.appendChild(li);
-        }
-    }
-    /*
-    calcularPontuacao();
-    verificarFimJogo();
-    */
+    verificaIgualdade(torreClick, numeroSorteado);
 }
 
 export function jogadaOponente(){
-    let torreOponente = getRandomInt(1,3);
+    let torre = getRandomInt(1,3);
+    let torreOponente = 'listaTorreOponente' + torre;
 
     console.log(torreOponente);
 
@@ -60,7 +38,7 @@ export function jogadaOponente(){
     if(listaOponente && listaOponente.length<3){
         listaOponente.push(numeroSorteadoOponente);
 
-        const olElement = document.querySelector('#listaTorreOponente'+torreOponente); // Referenciar o elemento <ol> pelo ID
+        const olElement = document.getElementById(torreOponente); // Referenciar o elemento <ol> pelo ID
         olElement.innerHTML = ""; // Limpar o conteúdo interno do elemento <ol>
 
         //adiciona novo nnúmero na lista
@@ -74,18 +52,9 @@ export function jogadaOponente(){
     else{
         jogadaOponente();
     }
+    
 }
 
-   /* calcularPontuacao();
-    verificarFimJogo();
-    */
-
-function verificarFimJogo(){
-    if(cont1 === 3 && cont2 === 3 && cont3 === 3){
-            return cont1 >= 3 && cont2 >= 3 && cont3 >= 3;
-        
-    }
-}
 
 function calcularPontuacao(torre) {
     const lista = getLista(torre);

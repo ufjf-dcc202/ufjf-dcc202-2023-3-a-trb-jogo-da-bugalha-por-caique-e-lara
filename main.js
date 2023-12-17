@@ -1,6 +1,8 @@
 //Identificar elementos
-export let numeroSorteado = document.querySelector('#Dado');
-export let numeroSorteadoOponente = document.querySelector('#DadoOponente');
+let dadoSorteado = document.querySelector('#Dado');
+export let numeroSorteado=0;
+let dadoSorteadoOponente = document.querySelector('#DadoOponente');
+export let numeroSorteadoOponente=0;
 const imgDado = document.querySelector('#imgDado');
 const imgDadoOponente = document.querySelector('#imgDadoOponente');
 const bntJogar = document.querySelector('#btnJogar');
@@ -31,6 +33,7 @@ function sortear() {
     setTimeout(function animacao() {
         //armazena numero sorteado
         numeroSorteado = getRandomInt(1,6);
+        dadoSorteado = numeroSorteado;
         //numero sorteado aparece no console
         console.log(numeroSorteado);
 
@@ -53,7 +56,6 @@ function sortear() {
         
     }, 1750);
     
-    
 }
 
 //Função dado do oponente
@@ -65,6 +67,7 @@ function sortearOponente(){
     setTimeout(function animacaoOponente() {
         //armazena numero sorteado
         numeroSorteadoOponente = getRandomInt(1,6);
+        dadoSorteadoOponente = numeroSorteadoOponente;
 
         //numero sorteado aparece no console
         console.log(numeroSorteadoOponente);
@@ -78,8 +81,9 @@ function sortearOponente(){
         
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
-        
+
     }, 1750);
+
 }
 
 function OcorreCliqueTorre(event){
