@@ -1,31 +1,24 @@
 //lista.js
-<<<<<<< HEAD
-import {adicionaNaLista, atualizarItensDeLista, getLista, verificaIgualdade} from "./lista.js";
+
+import {adicionaNaLista, atualizarItensDeLista, getLista, getListaVerificar, verificaIgualdade} from "./lista.js";
 import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
-=======
-import {adicionaNaLista, getLista} from "./lista.js";
-import { getRandomInt, numeroSorteado, numeroSorteadoOponente} from "./main.js";
->>>>>>> f9bd8e38cbc7f342234072f21da39aa10a42a641
 
 //definir elementos importantes
 const torre1 = document.querySelector('#listaTorre1');
 const torre2 = document.querySelector('#listaTorre2');
 const torre3 = document.querySelector('#listaTorre3');
 
-torre1.addEventListener('clicks', criaElementoNaLista);
+torre1.addEventListener('click', criaElementoNaLista);
 torre2.addEventListener('click', criaElementoNaLista);
 torre3.addEventListener('click', criaElementoNaLista);
 
-<<<<<<< HEAD
-=======
  function verificarFimJogo(){
     if(cont1 === 3 && cont2 === 3 && cont3 === 3){
             return cont1 >= 3 && cont2 >= 3 && cont3 >= 3;
-
     }
    
 }
->>>>>>> f9bd8e38cbc7f342234072f21da39aa10a42a641
+
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
     
@@ -38,7 +31,6 @@ export function criaElementoNaLista(event) {
         adicionaNaLista(torre, numeroSorteado);
         atualizarItensDeLista(torre);
     }
-    verificaIgualdade(torreClick, numeroSorteado);
 }
 
 export function jogadaOponente(){
@@ -68,6 +60,8 @@ export function jogadaOponente(){
         jogadaOponente();
     }
     
+    verificaIgualdade(torreOponente, numeroSorteadoOponente);
+    atualizarItensDeLista(getListaVerificar(listaOponente));
 }
 
 

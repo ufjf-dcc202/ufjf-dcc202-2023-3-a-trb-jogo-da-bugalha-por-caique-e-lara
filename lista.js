@@ -25,7 +25,7 @@ export function getLista(id) {
 }
 
 //retorna a lista a ser verificada tendo como parâmetro a lista recebida
-function getListaVerificar(id) {
+export function getListaVerificar(id) {
     switch (id){
         case 'listaTorre1':
             return listaTorreOponente1;
@@ -43,12 +43,15 @@ function getListaVerificar(id) {
 }
 
 
+
 //adiciona número na lista de acordo com id
 export function adicionaNaLista(id, numero){
     const lista = getLista(id);
     if (lista && lista.length<3){
        lista.push(numero);
     }
+    verificaIgualdade(id, numero);
+    atualizarItensDeLista(getListaVerificar(lista));
 }
 
  //atualiza os numeros da lista correspondente
@@ -75,18 +78,16 @@ export function verificaIgualdade(torre, numero) {
 
     const lista = getLista(torre);
     const listaVerificar = getListaVerificar(torre);
-    console.log(listaVerificar);
+    console.log("Antes da remoção:",listaVerificar);
 
     // verifica se ambas as listas existem
-   if (lista && listaVerificar) {
+   if (lista != listaVerificar) {
         // percorre listas e remove núm igual
-        for (let i = lista.length-1; i < lista.length && i < listaVerificar.length; i--) {
+        for (let i = listaVerificar.length-1; i>=0; i--) {
             if (lista[i] === numero || listaVerificar[i] === numero) {
-                listaVerificar.splice(i,numero);
+                listaVerificar.splice(i,1);
             }
         }
     }
-
-   // atualizarItensDeLista(listaVerificar);
-    console.log(listaVerificar);
+    console.log("Após da remoção:",listaVerificar);
 }

@@ -15,7 +15,6 @@ JogarOponente.addEventListener('click', sortearOponente);
 
 //importa função de jogo.js
 import { jogadaOponente} from "./jogo.js";
-import { getLista } from "./lista.js";
 
 //gera número aleatório
 export function getRandomInt(min, max) {
