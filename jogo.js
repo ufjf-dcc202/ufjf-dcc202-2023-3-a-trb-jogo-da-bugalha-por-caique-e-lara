@@ -1,9 +1,4 @@
-//lista.js
-
-import {adicionaNaLista, atualizarItensDeLista, getLista, verificaIgualdade} from "./lista.js";
-import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
-
-//definir elementos importantes
+//identifica elementos importantes
 const torre1 = document.querySelector('#listaTorre1');
 const torre2 = document.querySelector('#listaTorre2');
 const torre3 = document.querySelector('#listaTorre3');
@@ -12,12 +7,10 @@ torre1.addEventListener('click', criaElementoNaLista);
 torre2.addEventListener('click', criaElementoNaLista);
 torre3.addEventListener('click', criaElementoNaLista);
 
- function verificarFimJogo(){
-    if(cont1 === 3 && cont2 === 3 && cont3 === 3){
-            return cont1 >= 3 && cont2 >= 3 && cont3 >= 3;
-    }
-   
-}
+//importa funções
+import {adicionaNaLista, atualizarItensDeLista, getLista, getListaVerificar, verificarIgualdade} from "./lista.js";
+import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
+import { calcularPontuacao } from "./pontos.js";
 
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
@@ -30,7 +23,7 @@ export function criaElementoNaLista(event) {
         console.log(torre);
         adicionaNaLista(torre, numeroSorteado);
         atualizarItensDeLista(torre);
-        //calcularPontuacao(torre);
+        calcularPontuacao(torre);
     }
 }
 
@@ -49,7 +42,7 @@ export function jogadaOponente(){
         const olElement = document.getElementById(torreOponente); // Referenciar o elemento <ol> pelo ID
         olElement.innerHTML = ""; // Limpar o conteúdo interno do elemento <ol>
 
-        //adiciona novo nnúmero na lista
+        //adiciona novo número na lista
         for(let i=0; i<3;i++){
             const item = listaOponente[i];
             const li = document.createElement('li');
@@ -61,29 +54,7 @@ export function jogadaOponente(){
         jogadaOponente();
     }
     
-    verificaIgualdade(torreOponente, numeroSorteadoOponente);
+    verificarIgualdade(torreOponente, numeroSorteadoOponente);
+    calcularPontuacao(torreOponente);
+    atualizarItensDeLista(getListaVerificar(listaOponente));
 }
-
-/*
-function calcularPontuacao(torre) {
-    const lista = getLista(torre);
-    const quantidade={};
-    let num = lista;
-    let pontuacao = 0;
-
-    //verifica qtd vezes q o número aparece
-    for (let i = 0; i< lista.length; i++) {
-       quantidade[num] = (quantidade[num] || 0)+1;
-    }
-
-    //calcula pontos de acordo com o qtd vezes q o num aparece
-    for (let i = 0; i < lista.length; i++) {
-        pontuacao += num * quantidade[num];
-    }
-    const elementoPontuacaoJogador = document.getElementById('pontuacaoJogador');
-    elementoPontuacaoJogador.textContent = pontuacao;
-
-    return pontuacao;
-}
-
-*/
