@@ -14,7 +14,6 @@ import { calcularPontuacao } from "./pontos.js";
 
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
-    
     let torreClick = event.currentTarget;
 
     //verifica se o clique foi apenas na torre do jogador

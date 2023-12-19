@@ -11,7 +11,6 @@ const sorteado = document.querySelector('#sorteado');
 const sorteadoOponente = document.querySelector('#sorteadoOponente');
 
 bntJogar.addEventListener('click', sortear);
-JogarOponente.addEventListener('click', sortearOponente);
 
 //importa função de jogo.js
 import { jogadaOponente} from "./jogo.js";
@@ -40,21 +39,13 @@ function sortear() {
         //mostra imagem com base no numero
         imgDado.setAttribute('src', 'imagens/'+numeroSorteado+'.png');
 
-        //exibe botao
-        bntJogar.style.display = 'inline-block';
-
         //retira animacao
         imgDado.classList.remove('animar');
         imgDado.classList.remove('aparecer');
-        
-        /*Adiciona ouvinte apenas depois de rola o dado
-        torre1.addEventListener('click', OcorreCliqueTorre);
-        torre2.addEventListener('click', OcorreCliqueTorre);
-        torre3.addEventListener('click', OcorreCliqueTorre);
-        OcorreCliqueTorre();
-        */
-        
+
     }, 1750);
+
+    JogarOponente.addEventListener('click',sortearOponente);
     
 }
 
@@ -81,6 +72,9 @@ export function sortearOponente(){
         
         //seleciona uma coluna aleatória e adiciona o número
         jogadaOponente();
+
+         //exibe botao
+        bntJogar.style.display = 'inline-block';
     }, 1750);
 
 }

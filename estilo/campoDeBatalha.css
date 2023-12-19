@@ -1,10 +1,12 @@
 /*estiliza campo*/
 .campo {
-    margin-top: 100px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    height: 310px;
 }
 
+/*estiliza campo jogador*/
 #jogador{
     display: inline-block;
     border: 1px solid white;
@@ -12,6 +14,7 @@
     height: 210px;
     cursor: pointer;
 }
+
 /*estiliza campo oponente*/
 #oponente{
     display: inline-block;
@@ -22,18 +25,29 @@
     cursor: pointer;
 }
 
+/*pontuação de cada coluna*/
+.ponto{
+    margin-left: 25px;
+    width: 50px;
+    height: 45px;
+    display: inline-block;
+    top: 270px;
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.512);
+}
+
 /*torres-colunas */
 ol{
     margin-top: 15px;
+    margin-left: 0;
     list-style-type: none;
     display: inline-block;
     width: 90px;
     height: 180px;
     border: 2px solid rgba(148, 26, 179, 0.705);
     background-color: rgba(240, 248, 255, 0.247);
+    position: relative;
 }
-
-/*pontuação de cada coluna*/
 
 /*mensagem final*/
 .final {

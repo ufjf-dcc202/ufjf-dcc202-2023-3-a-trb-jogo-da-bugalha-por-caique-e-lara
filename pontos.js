@@ -80,8 +80,8 @@ export function calcularPontuacao(torre) {
     for (let i = 0; i < lista.length; i++) {
         let num = lista[i];
         pontuacao += num * quantidade[num];
-}
+    }
 
-// Atualiza o texto do label com a pontuação
+// Atualiza o texto do com a pontuação
     coluna.textContent = pontuacao;
 }
