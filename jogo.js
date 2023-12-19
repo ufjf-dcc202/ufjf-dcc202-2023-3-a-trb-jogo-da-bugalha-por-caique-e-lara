@@ -14,15 +14,18 @@ import { calcularPontuacao } from "./pontos.js";
 
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {
-    let torreClick = event.currentTarget;
 
-    //verifica se o clique foi apenas na torre do jogador
-    if(torreClick === torre1 || torreClick === torre2 || torreClick=== torre3){
-        let torre = event.target.id;
-        console.log(torre);
-        adicionaNaLista(torre, numeroSorteado);
-        atualizarItensDeLista(torre);
-        calcularPontuacao(torre);
+    if(numeroSorteado!=0){
+        let torreClick = event.currentTarget;
+
+        //verifica se o clique foi apenas na torre do jogador
+        if(torreClick === torre1 || torreClick === torre2 || torreClick=== torre3){
+            let torre = event.target.id;
+            console.log(torre);
+            adicionaNaLista(torre, numeroSorteado);
+            atualizarItensDeLista(torre);
+            calcularPontuacao(torre);
+        }
     }
 }
 
