@@ -1,19 +1,19 @@
+//importa função de jogo.js
+import { jogadaOponente} from "./jogo.js";
+
 //Identifica e define elementos
 let dadoSorteado = document.querySelector('#Dado');
-export let numeroSorteado=0;
 let dadoSorteadoOponente = document.querySelector('#DadoOponente');
+export let numeroSorteado=0;
 export let numeroSorteadoOponente=0;
+export const bntJogar = document.querySelector('#btnJogar');
 const imgDado = document.querySelector('#imgDado');
 const imgDadoOponente = document.querySelector('#imgDadoOponente');
-export const bntJogar = document.querySelector('#btnJogar');
 const JogarOponente = document.querySelector('.cOponente');
 const sorteado = document.querySelector('#sorteado');
 const sorteadoOponente = document.querySelector('#sorteadoOponente');
 
 bntJogar.addEventListener('click', sortear);
-
-//importa função de jogo.js
-import { jogadaOponente} from "./jogo.js";
 
 //gera número aleatório
 export function getRandomInt(min, max) {

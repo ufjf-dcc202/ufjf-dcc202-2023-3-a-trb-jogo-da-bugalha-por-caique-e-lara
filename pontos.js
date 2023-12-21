@@ -1,3 +1,8 @@
+//importa elementos importantes
+import { listaTorre1, listaTorre2, listaTorre3, listaTorreOponente1, listaTorreOponente2, listaTorreOponente3, getLista } from "./lista.js";
+import { bntJogar } from "./main.js";
+
+
 //identifica elementos
 let ponto1 = document.querySelector('#ponto1');
 let ponto2 = document.querySelector('#ponto2');
@@ -6,9 +11,7 @@ let pontoOponente1 = document.querySelector('#pontoOponente1');
 let pontoOponente2 = document.querySelector('#pontoOponente2');
 let pontoOponente3 = document.querySelector('#pontoOponente3');
 
-//importa elementos importantes
-import { listaTorre1, listaTorre2, listaTorre3, listaTorreOponente1, listaTorreOponente2, listaTorreOponente3, getLista } from "./lista.js";
-import { bntJogar } from "./main.js";
+
 
 //função que verifica fim de jogo
 export function verificarFimJogo(){

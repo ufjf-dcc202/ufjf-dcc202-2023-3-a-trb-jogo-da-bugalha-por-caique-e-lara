@@ -1,3 +1,8 @@
+//importa funções
+import {adicionaNaLista, atualizarItensDeLista, getLista, getListaVerificar, verificarIgualdade} from "./lista.js";
+import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
+import { calcularPontuacao } from "./pontos.js";
+
 //identifica elementos importantes
 const torre1 = document.querySelector('#listaTorre1');
 const torre2 = document.querySelector('#listaTorre2');
@@ -7,10 +12,6 @@ torre1.addEventListener('click', criaElementoNaLista);
 torre2.addEventListener('click', criaElementoNaLista);
 torre3.addEventListener('click', criaElementoNaLista);
 
-//importa funções
-import {adicionaNaLista, atualizarItensDeLista, getLista, getListaVerificar, verificarIgualdade} from "./lista.js";
-import { getRandomInt, numeroSorteado, numeroSorteadoOponente } from "./main.js";
-import { calcularPontuacao } from "./pontos.js";
 
 //adiciona numero sorteado na lista
 export function criaElementoNaLista(event) {

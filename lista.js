@@ -1,3 +1,6 @@
+//importa função
+import { calcularPontuacao, verificarFimJogo } from "./pontos.js";
+
 //define elementos
 export let listaTorre1 = [];
 export let listaTorre2 = [];
@@ -5,10 +8,6 @@ export let listaTorre3 = [];
 export let listaTorreOponente1 = [];
 export let listaTorreOponente2 = [];
 export let listaTorreOponente3 = [];
-
-//importa função
-import { calcularPontuacao, verificarFimJogo } from "./pontos.js";
-
 
 
 //retorna lista de acordo com id
